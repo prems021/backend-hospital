@@ -22,11 +22,6 @@ router.get('/apii', (req, res) => {
   });
 });
 
-router.get('/apii', (req, res) => {
-  User.find({}, (err, users) => {
-    if(err) throw err;
-    res.end(JSON.stringify(users));
-  });
-});
+
 
 export const route = router;
