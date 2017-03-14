@@ -9,8 +9,8 @@ import bodyParser from 'body-parser';
 import { route } from './routes';
 
 const app = express();
-mongoose.connect('mongodb://backend-sk:backend-sk@ds157258.mlab.com:57258/backend-starter-kit');
 
+mongoose.connect('mongodb://prem:prem@olympia.modulusmongo.net:27017/isonOd7o');
 app.set('port', (process.env.PORT || 8000));
 
 app.use(express.static(join(__dirname, '..', 'public')));
@@ -27,3 +27,6 @@ app.listen(app.get('port'), () => {
   mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
   mongoose.connection.once('open', () => console.log('Connection Succeeded.'));
 });
+
+
+// git push orgin masters
