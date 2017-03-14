@@ -1,0 +1,36 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "globals": {
+    // ...
+  },
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    // Possible Errors
+    "no-console": "off",
+
+    // Best Practices
+
+    // Variables
+
+    // Node.js and CommonJS
+
+    // Stylistic Issues
+
+    // JS.Next
+    "arrow-spacing": ["error"],
+    "no-useless-constructor": "error",
+    "no-var": "error",
+    "prefer-template": "error",
+    "symbol-description": "error",
+    "template-curly-spacing": ["error", "never"],
+    "yield-star-spacing": ["error", "after"]
+  }
+}
