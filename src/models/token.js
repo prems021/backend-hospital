@@ -5,7 +5,7 @@ const tokenSchema = new Schema({
   token_number: String, // like token number 70/20/04/2017
   created_at: { type: Date, default: Date.now },
   expires_at: { type: Date, default: Date.now },
-  hospital : { type: Object}, //hospital_id
+  hospital : { type: Schema.Types.ObjectId}, //hospital_id
   department : {type: Object}, //department_id
   
 

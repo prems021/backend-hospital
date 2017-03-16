@@ -5,7 +5,6 @@ const department_detailsSchema = new Schema({
   doctors_count: { type: Number, required: true },
   doctors:{type : Object }, //array of doctors
   reserved: { type: String, required: true },
-  pincode:{type: Number },
   opening_at: { type: Date, default: Date.now },
   closing_at: { type: Date, default: Date.now },
   land_phone: {type: Number },

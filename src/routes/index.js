@@ -21,21 +21,34 @@ router.get('/api', (req, res) => {
 
 router.post('/create_user',function(req,res)
   {
-     var anx = new User();
-   anx.email=req.body.email;
-   anx.password=req.body.password;
-  
-   
-   anx.save(function (err, result){
-    if(!err)
-    {
-     res.send('user creation completed');
-    }
- 
+     
+     User.findOne({email:req.body.email },function(err,doc){
+        if(!err && doc)
+        {
+          res.json({msg:"user exists please register with new username"});
+        }
+        else
+        {
+            var anx = new User();
+            anx.email=req.body.email;
+            anx.password=req.body.password;
+            anx.save(function (err, result){
+              if(!err)
+              {
+              res.send('user creation completed');
+              }
+                    });
+        }
 
-   });
+
+ 
+  
+     })
+   
 
  });
+
+ 
    router.post('/user_login',function(req,res) 
   {
      User.findOne({email:req.body.email ,password:req.body.password},function(err,doc){
@@ -52,19 +65,20 @@ router.post('/create_user',function(req,res)
      })
     });
 
-     router.post('/update_blogs',function(req,res) 
+     router.post('/create_departments',function(req,res) 
   {
      
-         var blof = new Blog();
-         blof.title = req.body.title;
-         blof.author = req.body.author;
-         blof.body = req.body.body;
-         blof.comments.body = req.body.comments;
-         
+         var blof = new Departments();
+         blof.department_name = req.body.department_name;
+         blof.doctors_count = req.body.doctors_count;
+         blof.opening_at = req.opening_at;
+         blof.closing_at = req.body.closing_at;
+         blof.land_phone = req.body.land_phone;
+         blof.tokens_per_day = req.body.tokens_per_day;
          blof.save(function (err, result){
               if(!err)
               {
-              res.send('blog updated');
+              res.send('department created');
               }
  
 

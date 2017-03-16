@@ -11,6 +11,8 @@ import { route } from './routes';
 const app = express();
 
 mongoose.connect('mongodb://prem:prem@olympia.modulusmongo.net:27017/isonOd7o');
+
+mongoose.connect('mongodb://localhost/main');
 app.set('port', (process.env.PORT || 8000));
 
 app.use(express.static(join(__dirname, '..', 'public')));
@@ -29,4 +31,5 @@ app.listen(app.get('port'), () => {
 });
 
 
-// git push orgin masters
+
+//   git commit -m 'hi' git push orgin masters  //mongod --dbpath "G:\project\data"
