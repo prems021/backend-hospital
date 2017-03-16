@@ -12,7 +12,7 @@ const app = express();
 
 mongoose.connect('mongodb://prem:prem@olympia.modulusmongo.net:27017/isonOd7o');
 
-mongoose.connect('mongodb://localhost/main');
+//mongoose.connect('mongodb://localhost/main');
 app.set('port', (process.env.PORT || 8000));
 
 app.use(express.static(join(__dirname, '..', 'public')));
