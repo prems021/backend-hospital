@@ -12,3 +12,5 @@ const department_detailsSchema = new Schema({
 });
 
 export const Departments = mongoose.model('department_details', department_detailsSchema);
+
+//  'doctros array wanted'
